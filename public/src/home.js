@@ -21,8 +21,9 @@ function getMostCommonGenres(books) {
   //return the most common genre of books.
   //use forEach to loop through the books array.
   let result = [];
+  
   books.forEach((book) => {
-    if (result.every((genre) => genre.name===book.genre)) {
+    if (result.some((genre) => genre.name===book.genre)) {
       for (let i =0; i < result.length; i ++) {
         if (result[i].name===book.genre) {
           result[i].count++
@@ -69,12 +70,14 @@ function getMostPopularAuthors(books, authors) {
     });
   }
 });
+//using helper fucntion to sort the result and change the length to 5
 return newarray(result);
 }
 function newarray(sortedarray) {
   sortedarray.sort((indexA, indexB) =>
   indexA.count < indexB.count ? 1 : -1
 );
+
 const sorted = sortedarray.slice(0, 5);
   return sorted;
 }
