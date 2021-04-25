@@ -10,7 +10,7 @@ function getTotalAccountsCount(accounts) {
 }
 
 function getBooksBorrowedCount(books) {
-  //use filter method to filter in the books object
+  //use filter method to filter in the books object.
 // connect books returned and borrows
 const borrowedbookscount= books.filter((book)=> book.borrows[0].returned===false);
 return borrowedbookscount.length;
@@ -18,7 +18,7 @@ return borrowedbookscount.length;
 
 
 function getMostCommonGenres(books) {
-  //return the most common genre of books 
+  //return the most common genre of books.
   //use forEach to loop through the books array.
   let result = [];
   books.forEach((book) => {
